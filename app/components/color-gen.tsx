@@ -5,7 +5,6 @@ import {
 	getRandomColorPalette,
 	getReadableTextColors,
 } from "@/app/utils/colors";
-import Image from "next/image";
 import CopyOptionsPopup from "../utils/copy";
 
 export default function ColorGenerator() {
@@ -24,6 +23,16 @@ export default function ColorGenerator() {
 		setColorsLocal(newColors);
 		setColors(newColors);
 		setTextColor(getReadableTextColors(newColors[0].hex));
+		fetch("/api/buttonIncrement", {
+			method: "POST"
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log("Button count updated:", data);
+			})
+			.catch((error) => {
+				console.error("Error updating button count:", error);
+			});
 	};
 
 	const setColorCounts = (count: number) => {
