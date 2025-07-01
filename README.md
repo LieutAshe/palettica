@@ -9,6 +9,7 @@
 
 [![version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/LieutAshe/palettica)
 [![Button Presses](https://img.shields.io/endpoint?url=https://palettica.vercel.app/api/button-count)](https://palettica.vercel.app)
+[![License](https://img.shields.io/github/license/LieutAshe/palettica)](https://github.com/LieutAshe/palettica/blob/main/LICENSE)
 
 A smart and minimal color palette generator — ideal for designers and developers.
 
