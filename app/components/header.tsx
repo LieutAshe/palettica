@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Header() {
     return (
-        <header className="flex items-center justify-between text-white fixed inset-1 bottom-auto z-50
+        <header className="flex h-10 items-center justify-between text-white fixed inset-1 bottom-auto z-50
             sm:inset-2 sm:bottom-auto
         ">
             <div className="flex items-center p-2

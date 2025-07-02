@@ -1,6 +1,11 @@
 "use client";
 import { useState } from "react";
 import { useColorContext } from "@/app/context/colorContext";
+import {
+    generateCSSVariables,
+    generateHexList,
+    generateJSON,
+} from "@/app/utils/copyValues";
 
 export default function CopyOptionsPopup() {
     const [open, setOpen] = useState(false);
@@ -9,33 +14,6 @@ export default function CopyOptionsPopup() {
     const copyToClipboard = (text: string) => {
         navigator.clipboard.writeText(text);
         setOpen(false);
-    };
-
-    const generateCSSVariables = () => {
-        let cssVars = colors
-            .map((c, i) => `--color-${i + 1}: ${c.hex}; // ${c.name}`)
-            .join("\n");
-        cssVars += `\n--text-color-heading: ${textColor[0].hex};\n--text-color-body: ${textColor[1].hex};`;
-        return cssVars;
-    };
-
-    const generateHexList = () => {
-        let hextList = colors.map((c) => c.hex).join(", ");
-        hextList += `, ${textColor[0].hex}, ${textColor[1].hex}`;
-        return hextList;
-    };
-
-    const generateJSON = () => {
-        let jsonColors = colors.map(({ name, hex }) => ({ name, hex }));
-        jsonColors.push(
-            { name: "Text Heading Color", hex: textColor[0].hex },
-            { name: "Text Body Color", hex: textColor[1].hex }
-        );
-        return JSON.stringify(
-            jsonColors,
-            null,
-            2
-        );
     };
 
     return (
@@ -56,19 +34,19 @@ export default function CopyOptionsPopup() {
         "
                 >
                     <button
-                        onClick={() => copyToClipboard(generateCSSVariables())}
+                        onClick={() => copyToClipboard(generateCSSVariables(colors, textColor))}
                         className="w-full text-left px-4 py-2 hover:bg-gray-100"
                     >
                         Copy as CSS Variables
                     </button>
                     <button
-                        onClick={() => copyToClipboard(generateHexList())}
+                        onClick={() => copyToClipboard(generateHexList(colors, textColor))}
                         className="w-full text-left px-4 py-2 hover:bg-gray-100"
                     >
                         Copy HEX Values
                     </button>
                     <button
-                        onClick={() => copyToClipboard(generateJSON())}
+                        onClick={() => copyToClipboard(generateJSON(colors, textColor))}
                         className="w-full text-left px-4 py-2 hover:bg-gray-100"
                     >
                         Copy as JSON

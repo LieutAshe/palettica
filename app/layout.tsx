@@ -23,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${quickSand.variable} antialiased`}
+        className={`${quickSand.variable} antialiased
+          bg-[#171717] 
+        `}
       >
         <ColorProvider>
         {children}
