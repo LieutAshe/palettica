@@ -141,7 +141,7 @@ export default function Copy() {
 						onClick={() => {
 							setCodeType("css");
 						}}
-						className="w-fit text-left px-4 py-2 hover:bg-gray-900 bg-gray-700 text-white rounded-r-lg"
+						className="w-fit text-left px-4 py-2 hover:bg-gray-900 bg-gray-700 text-white"
 					>
 						CSS
 					</button>
@@ -151,7 +151,7 @@ export default function Copy() {
 						onClick={() => {
 							setCodeType("hex");
 						}}
-						className="w-fit text-left px-4 py-2 hover:bg-gray-900 bg-gray-700 text-white rounded-r-lg"
+						className="w-fit text-left px-4 py-2 hover:bg-gray-900 bg-gray-700 text-white"
 					>
 						Hex
 					</button>
@@ -161,7 +161,7 @@ export default function Copy() {
 						onClick={() => {
 							setCodeType("json");
 						}}
-						className="w-fit text-left px-4 py-2 hover:bg-gray-900 bg-gray-700 text-white rounded-r-lg"
+						className="w-fit text-left px-4 py-2 hover:bg-gray-900 bg-gray-700 text-white"
 					>
 						JSON
 					</button>
@@ -171,7 +171,7 @@ export default function Copy() {
 						onClick={() => {
 							copyToClipboard(code);
 						}}
-						className="w-fit text-left px-4 py-2 hover:bg-gray-900 bg-gray-700 text-white rounded-r-lg"
+						className="w-fit text-left px-4 py-2 hover:bg-gray-900 bg-gray-700 text-white"
 					>
 						Copy
 					</button>
